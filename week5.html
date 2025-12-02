@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>week5w</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&family=Numans&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="week5.css" />
+</head>
+
+<body>
+    <a href="../collection.html" class="back">< back</a>
+
+  <div class="window-wrap">
+    <div class="sky-inner"></div>
+    <img src="window.png" class="window-frame" alt="window">
+  </div>
+
+  <img id="sound-toggle" src="soundoff.png" alt="sound control">
+
+  <audio id="bg-music" src="Spring.mp3" loop></audio>
+
+  <script>
+    const audio = document.getElementById('bg-music');
+    const soundIcon = document.getElementById('sound-toggle');
+
+    let isPlaying = false;
+
+    soundIcon.addEventListener('click', () => {
+      if (!isPlaying) {
+        audio.play();
+        isPlaying = true;
+        soundIcon.src = 'soundon.png';
+      } else {
+        audio.pause();
+        isPlaying = false;
+        soundIcon.src = 'soundoff.png';
+      }
+    });
+  </script>
+
+</body>
+</html>
